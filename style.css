@@ -1,0 +1,269 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #2d3748;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    color: white;
+    padding: 30px;
+}
+
+.profile-info h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.profile-info h2 {
+    font-size: 1.1rem;
+    color: #a0aec0;
+    margin-bottom: 15px;
+}
+
+.summary {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cbd5e0;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+}
+
+.contact-item i {
+    width: 20px;
+    color: #667eea;
+}
+
+/* Main Content */
+.main-content {
+    padding: 30px;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.section-title i {
+    color: #667eea;
+}
+
+/* Experiência */
+.experience-item, .education-item, .project-item, .certification-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f7fafc;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.job-title, .degree, .project-title, .cert-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 5px;
+}
+
+.company, .institution, .cert-issuer {
+    color: #667eea;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.period, .cert-date {
+    font-size: 0.9rem;
+    color: #718096;
+    background: #e2e8f0;
+    padding: 4px 12px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.achievements {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.achievements li {
+    padding-left: 15px;
+    margin-bottom: 5px;
+    color: #4a5568;
+    position: relative;
+}
+
+.achievements li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.project-description {
+    color: #4a5568;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-category h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 10px;
+}
+
+.skills-list, .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tag, .tech-tag {
+    background: #667eea;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    .header, .main-content { padding: 20px; }
+    .profile-info h1 { font-size: 1.8rem; }
+    .contact-info { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+}
+
+/* Impressão */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+        font-size: 11px;
+    }
+    
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: none;
+    }
+    
+    .header {
+        background: #1a202c !important;
+        padding: 15px;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .profile-info h1 {
+        font-size: 1.6rem;
+        color: white !important;
+    }
+    
+    .profile-info h2 {
+        font-size: 1rem;
+        color: #a0aec0 !important;
+    }
+    
+    .summary {
+        font-size: 0.9rem;
+        color: #cbd5e0 !important;
+    }
+    
+    .contact-item {
+        font-size: 0.8rem;
+        color: white !important;
+    }
+    
+    .contact-item i {
+        color: #667eea !important;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .section {
+        margin-bottom: 15px;
+        page-break-inside: avoid;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .experience-item, .education-item, .project-item, .certification-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        page-break-inside: avoid;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .skill-tag, .tech-tag {
+        font-size: 0.7rem;
+        padding: 3px 8px;
+    }
+    
+    .print-btn {
+        display: none !important;
+    }
+}
